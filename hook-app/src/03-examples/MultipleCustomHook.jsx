@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useFetch } from "../hooks/useFetch"
+import { LoadingMessage } from "./LoadingMessage"
+import { PokemonCard } from "./PokemonCard"
 
 export const MultipleCustomHook = () => {
 
@@ -20,7 +22,20 @@ export const MultipleCustomHook = () => {
         <>
             <div>Información del Pokemon</div>
             <hr />
-            {isLoading && <p>Cargando...</p>}
+            {
+                isLoading
+                    ? <LoadingMessage />
+                    : (<PokemonCard
+                        id={counter} name={data.name}
+                        sprites={[
+                            data.sprites.front_default,
+                            data.sprites.front_shiny,
+                            data.sprites.back_default,
+                            data.sprites.back_shiny
+                        ]
+                        } />
+                    )
+            }
 
             <h2>{data?.name}</h2>
 
