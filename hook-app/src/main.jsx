@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { CallbackHook } from './07-useCallback/CallbackHook'
+import { TodoApp } from './08-useReducer/TodoApp'
+//import { CallbackHook } from './07-useCallback/CallbackHook'
 //import { UseMemoPractica } from './06-useMemo/UseMemoPractica'
 //import { FocusScreen } from './04-useRef/FocusScreen'
 //import { MultipleCustomHook } from './03-examples/MultipleCustomHook'
@@ -12,6 +13,6 @@ import { CallbackHook } from './07-useCallback/CallbackHook'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CallbackHook />
+    <TodoApp />
   </React.StrictMode>
 )
